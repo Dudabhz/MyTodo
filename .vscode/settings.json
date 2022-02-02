@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/6de9fc9b-1bae-44cb-9233-f1c344b2a1ff/resourceGroups/Duda/providers/Microsoft.Web/sites/MyTodoWeb",
-    "appService.deploySubpath": "publish"
+    "appService.deploySubpath": "publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/6de9fc9b-1bae-44cb-9233-f1c344b2a1ff/resourceGroups/my-todo-web/providers/Microsoft.Web/sites/mytodoweb"
 }
