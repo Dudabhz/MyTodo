@@ -50,3 +50,8 @@ C:\DevDay\MyTodo\obj\Debug\net5.0\MyTodo.dll
 C:\DevDay\MyTodo\obj\Debug\net5.0\ref\MyTodo.dll
 C:\DevDay\MyTodo\obj\Debug\net5.0\MyTodo.pdb
 C:\DevDay\MyTodo\obj\Debug\net5.0\MyTodo.genruntimeconfig.cache
+C:\DevDay\MyTodo\bin\Debug\net5.0\publish\web.config
+C:\DevDay\MyTodo\bin\Debug\net5.0\publish\appsettings.Development.json
+C:\DevDay\MyTodo\bin\Debug\net5.0\publish\appsettings.json
+C:\DevDay\MyTodo\bin\Debug\net5.0\publish\MyTodo.deps.json
+C:\DevDay\MyTodo\bin\Debug\net5.0\publish\MyTodo.runtimeconfig.json
