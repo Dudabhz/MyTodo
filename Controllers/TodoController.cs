@@ -36,6 +36,34 @@ namespace MyTodo.Controllers
             return todo == null ? NotFound() : Ok(todo);
         }
 
+        [HttpPost("todos")]
+        public async Task<IActionResult> PostAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] CreateTodoViewModel model
+        )
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var todo = new Todo
+            {
+                Date = DateTime.Now,
+                Done = false,
+                Title = model.Title
+            };
+
+            try
+            {
+                await context.Todos.AddAsync(todo);
+                await context.SaveChangesAsync();
+                return Created("v1/todos/{todo.id}", todo);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpPut("todos/{id}")]
 
         public async Task<IActionResult> PutAsync(
@@ -65,35 +93,7 @@ namespace MyTodo.Controllers
                 return BadRequest();
             }
         }
-
-        [HttpPost("todos")]
-        public async Task<IActionResult> PostAsync(
-            [FromServices] AppDbContext context,
-            [FromBody] CreateTodoViewModel model
-        )
-        {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
-            var todo = new Todo
-            {
-                Date = DateTime.Now,
-                Done = false,
-                Title = model.Title
-            };
-
-            try
-            {
-                await context.Todos.AddAsync(todo);
-                await context.SaveChangesAsync();
-                return Created("v1/todos/{todo.id}", todo);
-            }
-            catch (Exception e)
-            {
-                return BadRequest();
-            }
-        }
-
+        
         [HttpDelete("todos/{id}")]
 
         public async Task<IActionResult> DeleteAsync(
